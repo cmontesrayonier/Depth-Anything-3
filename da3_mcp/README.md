@@ -28,13 +28,19 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 {
   "mcpServers": {
     "da3-forest-chm": {
-      "command": "python",
-      "args": ["-m", "da3_mcp.server"],
-      "cwd": "/path/to/Depth-Anything-3"
+      "command": "/path/to/your/python",
+      "args": ["-m", "da3_mcp.server"]
     }
   }
 }
 ```
+
+> **Important:** Use the **full path** to the Python executable from the environment
+> where DA3 and its dependencies are installed — not just `"python"`, which may
+> resolve to the system Python. Find yours with:
+> ```bash
+> which python   # or: conda run -n your-env which python
+> ```
 
 Restart Claude Desktop — the 8 DA3 tools will appear in the MCP panel.
 
